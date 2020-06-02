@@ -37,3 +37,9 @@ print(len(x))
 # YOUR CODE HERE
 for x in range(1, 8):
    print(x*1000)
+
+#for i in x:
+#    print(i*1000)
+
+#for i in range(len(x)):
+#     print(x[i]*1000)
