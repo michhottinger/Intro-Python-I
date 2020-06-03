@@ -18,10 +18,7 @@ print(f1(1, 2))
 # YOUR CODE HERE
 
 def f2(*args):
-    o = []
-    for arg in args: # Iterate over each argument your function received.
-        o = sum(arg)   # or better, o.extend(arg)
-    return o
+    return sum(args)
 
 
 print(f2(1))                    # Should print 1
@@ -32,6 +29,14 @@ print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
 a = [7, 6, 5, 4]
 
 # How do you have to modify the f2 call below to make this work?
+
+
+def f2(*args):
+    o = []
+    for arg in args: 
+        o = sum(arg)
+    return o
+
 print(f2(a))    # Should print 22
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
@@ -40,6 +45,12 @@ print(f2(a))    # Should print 22
 # Note: Google "python default arguments" for a hint.
 
 # YOUR CODE HERE
+
+def f3(x, y=0):
+    if y=0:
+    return x + 1 
+        else:
+            return x + y
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -54,6 +65,9 @@ print(f3(8))     # Should print 9
 # Note: Google "python keyword arguments".
 
 # YOUR CODE HERE
+
+
+
 
 # Should print
 # key: a, value: 12
