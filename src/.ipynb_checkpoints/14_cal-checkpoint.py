@@ -36,15 +36,14 @@ today = date.today()
 print("Today's date:", today)
 
 m_now = today.month
+print(m_now)
 
 yr_now = today.year
 
 month = int(sys.argv[1])
 year = int(sys.argv[2])
 
-#if sys.argv is []
-#    return today_month and today_year
-
+print(month, year)
 
 
 def cal(year=yr_now, month=m_now):
@@ -55,3 +54,11 @@ def cal(year=yr_now, month=m_now):
 
 cal()
 
+num_args = len(sys.argv)
+
+in num_args ==1:
+    pass
+elif num_args ==2:
+    month = int(sys.argv[1])
+    
+    

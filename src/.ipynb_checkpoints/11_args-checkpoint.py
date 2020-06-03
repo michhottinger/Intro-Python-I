@@ -46,11 +46,8 @@ print(f2(a))    # Should print 22
 
 # YOUR CODE HERE
 
-def f3(x, y=0):
-    if y=0:
-    return x + 1 
-        else:
-            return x + y
+def f3(a, b=None):
+    return a+b if b is not None else a+1
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -66,24 +63,37 @@ print(f3(8))     # Should print 9
 
 # YOUR CODE HERE
 
-
-
+def f4(**attributes):
+    """Return a string of comma-separated key-value pairs. key: foo, value: bar"""
+    return ",".join(
+        f"key: {param}, value: {value}"
+        for param, value in attributes.items()
+    )
 
 # Should print
 # key: a, value: 12
 # key: b, value: 30
-f4(a=12, b=30)
+print(f4(a=12, b=30)) #does not print on separtate lines--havent' found how to do this in f-string
 
 # Should print
 # key: city, value: Berkeley
 # key: population, value: 121240
 # key: founded, value: "March 23, 1868"
-f4(city="Berkeley", population=121240, founded="March 23, 1868")
+print(f4(city="Berkeley", population=121240, founded="March 23, 1868"))
 
 d = {
     "monster": "goblin",
     "hp": 3
 }
 
+
+def f4(dict):
+    """Return a string of comma-separated key-value pairs. key: foo, value: bar"""
+    return ",".join(
+        f"key: {param}, value: {value}"
+        for param, value in dict.items()
+    )
+
+
 # How do you have to modify the f4 call below to make this work?
-f4(d)
+print(f4(d))
