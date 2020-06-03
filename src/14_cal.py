@@ -32,33 +32,40 @@ import calendar
 from datetime import datetime
 from datetime import date
 
-today = date.today()
-print("Today's date:", today)
 
-m_now = today.month
-print(m_now)
+#notes from class:
 
-yr_now = today.year
-
-month = int(sys.argv[1])
-year = int(sys.argv[2])
-
-print(month, year)
-
-
-def cal(year=yr_now, month=m_now):
-# Create a plain text calendar
-   c = calendar.TextCalendar(calendar.SUNDAY)
-   str = c.formatmonth(year, month, 0, 0)
-   print (str)
-
-cal()
-
+# receive user input as argument input (we're not going to be using the `input`)
+# sys.argv is a list of the args that the user provides at the start of the program 
 num_args = len(sys.argv)
 
-in num_args ==1:
+# init an instance of the text calendar class
+cal = calendar.TextCalendar()
+
+month = datetime.now().month
+year = datetime.now().year
+
+# if user specified no args:
+if num_args == 1:
+    # print current month and year 
     pass
-elif num_args ==2:
+    # we want to print out the month with the calendar 
+# if user specified one args:
+elif num_args == 2:
+    # assume that args is the month
     month = int(sys.argv[1])
-    
-    
+    # print that month of the current year 
+# if user specified two args:  
+elif num_args == 3: 
+    # print that month of that year
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+# otherwise
+else:
+    # print a usage statement
+    print("usage: cal.py [month] [year]") 
+    # exit the program 
+    sys.exit(1)
+
+# we need to print out a formatted calendar 
+cal.prmonth(year, month)
